@@ -1,21 +1,26 @@
 import { NextRequest, NextResponse } from "next/server";
+import axios from "axios";
+import { API_ROUTE } from "@/constants/api";
+
+// Config axios for tis route
+const API_URL = "http://localhost:8000/api/users";
 
 export async function GET(req: NextRequest): Promise<NextResponse> {
-  return NextResponse.json({
-    message: "Users retrieved successfully!",
-    data: [
-      {
-        id: 1,
-        name: "John Doe",
-        email: "johndoe@email.com",
-      },
-      {
-        id: 2,
-        name: "Jane Doe",
-        email: "janedoe@email.com",
-      },
-    ],
-  });
+  try {
+    const response = await axios.get(API_URL);
+
+    const { data, message } = response.data;
+
+    return NextResponse.json({
+      message: message,
+      data: data,
+    });
+  } catch (error: any) {
+    return NextResponse.json(
+      { message: "Ha ocurrido un error" },
+      { status: 500 }
+    );
+  }
 }
 
 export async function POST(req: NextRequest): Promise<NextResponse> {
