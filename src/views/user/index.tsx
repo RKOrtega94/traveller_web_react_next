@@ -86,7 +86,7 @@ export default function UsersView() {
               </tbody>
             </table>
           </div>
-          <div className="w-96 card bg-primary shadow-xl p-4">
+          <div className="w-96 card bg-primary shadow-xl p-4 h-min">
             <div className="flex justify-center w-full">
               <div className="avatar">
                 <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
