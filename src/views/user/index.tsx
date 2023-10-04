@@ -1,3 +1,7 @@
+"use client";
+
+import Image from "next/image";
+
 export default function UsersView() {
   return (
     <div className="w-full">
@@ -83,7 +87,20 @@ export default function UsersView() {
             </table>
           </div>
           <div className="w-96 card bg-primary shadow-xl p-4">
-            
+            <div className="flex justify-center w-full">
+              <div className="avatar">
+                <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                  {/* Avatar from url random */}
+                  <Image
+                    src="https://picsum.photos/200"
+                    alt="Avatar"
+                    width={200}
+                    height={200}
+                    className="rounded-full"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
