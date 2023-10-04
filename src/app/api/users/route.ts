@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import axios from "axios";
-import { API_ROUTE } from "@/constants/api";
 
 // Config axios for tis route
 const API_URL = "http://localhost:8000/api/users";
