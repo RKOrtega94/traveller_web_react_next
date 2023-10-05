@@ -12,8 +12,8 @@ export default function SectionTemplate({
     <div className="w-full flex flex-col">
       <div className="w-full flex justify-between flex-row space-x-2 items-center">
         <span className="text-2xl font-bold">{section}</span>
-        <div className="flex items-center space-x-2">
-          <span className="text-xs">Ver más</span>
+        <div className="flex items-center space-x-2 text-xs">
+          <span>Ver más</span>
           <FontAwesomeIcon icon={faAngleRight} height={12} />
         </div>
       </div>
