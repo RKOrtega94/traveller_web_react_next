@@ -19,28 +19,28 @@ export default function UsersView() {
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 mb-4 gap-4">
           <div className="card p-2 shadow-xl flex flex-row justify-between items-start">
             <Image src={UsersIcon} alt="user icon" height={40} />
-            <div className="flex flex-col items-end">
+            <div className="flex flex-col items-end justify-between">
               <span className="text-2xl font-bold">Total de usuarios</span>
               <span className="text-3xl font-bold text-primary">1000</span>
             </div>
           </div>
           <div className="card p-2 shadow-xl flex flex-row justify-between items-start">
             <Image src={UsersIcon} alt="user icon" height={40} />
-            <div className="flex flex-col items-end">
+            <div className="flex flex-col items-end justify-between">
               <span className="text-2xl font-bold">Nuevos usuarios</span>
               <span className="text-3xl font-bold text-primary">1000</span>
             </div>
           </div>
           <div className="card p-2 shadow-xl flex flex-row justify-between items-start">
             <Image src={UsersIcon} alt="user icon" height={40} />
-            <div className="flex flex-col items-end">
+            <div className="flex flex-col items-end justify-between">
               <span className="text-2xl font-bold">Bloqueados</span>
               <span className="text-3xl font-bold text-primary">1000</span>
             </div>
           </div>
           <div className="card p-2 shadow-xl flex flex-row justify-between items-start">
             <Image src={UsersIcon} alt="user icon" height={40} />
-            <div className="flex flex-col items-end">
+            <div className="flex flex-col items-end justify-between">
               <span className="text-2xl font-bold">Eliminados</span>
               <span className="text-3xl font-bold text-primary">1000</span>
             </div>
