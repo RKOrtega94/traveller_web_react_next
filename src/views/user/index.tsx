@@ -1,7 +1,9 @@
 "use client";
 
 import {
+  faCirclePlus,
   faComment,
+  faMagnifyingGlass,
   faMessage,
   faPhotoFilm,
   faRankingStar,
@@ -19,36 +21,57 @@ export default function UsersView() {
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 mb-4 gap-4">
           <div className="card p-2 shadow-xl flex flex-row justify-between items-start">
             <Image src={UsersIcon} alt="user icon" height={40} />
-            <div className="flex flex-col items-end justify-between">
-              <span className="text-2xl font-bold">Total de usuarios</span>
+            <div className="flex flex-col  h-full items-end justify-between">
+              <span className="text-2xl font-bold text-end">
+                Total de usuarios
+              </span>
               <span className="text-3xl font-bold text-primary">1000</span>
             </div>
           </div>
           <div className="card p-2 shadow-xl flex flex-row justify-between items-start">
             <Image src={UsersIcon} alt="user icon" height={40} />
-            <div className="flex flex-col items-end justify-between">
-              <span className="text-2xl font-bold">Nuevos usuarios</span>
+            <div className="flex flex-col  h-full items-end justify-between">
+              <span className="text-2xl font-bold text-end">
+                Nuevos usuarios
+              </span>
               <span className="text-3xl font-bold text-primary">1000</span>
             </div>
           </div>
           <div className="card p-2 shadow-xl flex flex-row justify-between items-start">
             <Image src={UsersIcon} alt="user icon" height={40} />
-            <div className="flex flex-col items-end justify-between">
-              <span className="text-2xl font-bold">Bloqueados</span>
+            <div className="flex flex-col  h-full items-end justify-between">
+              <span className="text-2xl font-bold text-end">Bloqueados</span>
               <span className="text-3xl font-bold text-primary">1000</span>
             </div>
           </div>
           <div className="card p-2 shadow-xl flex flex-row justify-between items-start">
             <Image src={UsersIcon} alt="user icon" height={40} />
-            <div className="flex flex-col items-end justify-between">
-              <span className="text-2xl font-bold">Eliminados</span>
+            <div className="flex flex-col  h-full items-end justify-between">
+              <span className="text-2xl font-bold text-end">Eliminados</span>
               <span className="text-3xl font-bold text-primary">1000</span>
             </div>
           </div>
         </div>
         <div className="w-full flex justify-between mb-4">
           <h2 className="card-title">Users</h2>
-          <button className="btn btn-primary btn-sm">Add User</button>
+          <div className="flex space-x-2">
+            <input
+              name="search"
+              type="search"
+              placeholder="Search…"
+              autoComplete="off"
+              spellCheck="false"
+              id="typeahead-0.j0yk5lffcq"
+              aria-autocomplete="list"
+              aria-controls="typeahead-0.j0yk5lffcq-listbox"
+              aria-labelledby="typeahead-0.j0yk5lffcq-label"
+              className="svelte-wqugyy"
+            ></input>
+            <button className="btn btn-primary btn-sm">
+              <FontAwesomeIcon icon={faCirclePlus} />
+              <span>Add User</span>
+            </button>
+          </div>
         </div>
         <div className="w-full flex flex-col md:flex-row md:space-x-2">
           <div className="overflow-x-auto w-full">

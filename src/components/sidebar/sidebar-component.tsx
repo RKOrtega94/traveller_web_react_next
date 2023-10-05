@@ -1,10 +1,12 @@
 import Image from "next/image";
 import SidebarAnchor from "./components/sidebar-anchor";
+import SidebarParentMenu from "./components/sidebar-parent-menu";
 
 import LogoImage from "@assets/images/logo.png";
 
 // Icons
 import HomeIcon from "@assets/icons/home.png";
+import AdministrationIcon from "@assets/icons/administration.png";
 
 export default function SidebarComponent() {
   return (
@@ -19,9 +21,9 @@ export default function SidebarComponent() {
         <Image src={LogoImage} alt="logo" />
         <div className="divider my-0"></div>
         <SidebarAnchor icon={HomeIcon} label="Inicio" route="/users" />
-        <li>
-          <a>Sidebar Item 2</a>
-        </li>
+        <SidebarParentMenu icon={AdministrationIcon} label="Administración">
+          <SidebarAnchor icon={HomeIcon} label="Inicio" route="/users" />
+        </SidebarParentMenu>
       </ul>
     </div>
   );
