@@ -14,7 +14,7 @@ import Image from "next/image";
 // Icons
 import UsersIcon from "@assets/icons/users.png";
 
-export default function UsersView() {
+export default function UserView() {
   return (
     <div className="w-full">
       <div className="card bg-base-100 shadow-xl p-4">

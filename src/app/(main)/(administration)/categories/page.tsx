@@ -1,9 +1,9 @@
-import UserView from "@views/user/index";
+import CategoryView from "@views/category/index";
 
 export default function page() {
   return (
     <div className="w-full p-4">
-      <UserView />
+      <CategoryView />
     </div>
   );
 }

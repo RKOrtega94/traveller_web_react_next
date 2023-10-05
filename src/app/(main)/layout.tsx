@@ -15,7 +15,7 @@ export default function layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="drawer lg:drawer-open">
       <input id="main-drawer" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col items-start">
+      <div className="drawer-content flex flex-col items-start w-full h-full">
         {/* {children} */}
         <NavbarComponent />
         {children}
