@@ -14,7 +14,7 @@ export default function SidebarComponent() {
         aria-label="close sidebar"
         className="drawer-overlay"
       ></label>
-      <ul className="menu p-4 w-64 min-h-full bg-base-100 text-base-content rounded-r-2xl shadow-md">
+      <ul className="menu p-4 w-64 min-h-full bg-base-100 text-base-content">
         {/* Sidebar content here */}
         <Image src={LogoImage} alt="logo" />
         <div className="divider my-0"></div>

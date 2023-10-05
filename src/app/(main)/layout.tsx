@@ -1,5 +1,6 @@
 import NavbarComponent from "@components/navbar-component";
 import SidebarComponent from "@/components/sidebar/sidebar-component";
+import FooterComponent from "@components/footer-component";
 
 export const metadata = {
   title: "Travellers",
@@ -14,16 +15,11 @@ export default function layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="drawer lg:drawer-open">
       <input id="main-drawer" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col items-start p-2">
-        {/* Page content here */}
-        {/* <label
-          htmlFor="main-drawer"
-          className="btn btn-primary drawer-button lg:hidden"
-        >
-          Open drawer
-        </label> */}
+      <div className="drawer-content flex flex-col items-start">
         {/* {children} */}
         <NavbarComponent />
+        {children}
+        {/* <FooterComponent /> */}
       </div>
       <SidebarComponent />
     </div>

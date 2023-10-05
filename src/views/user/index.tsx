@@ -150,7 +150,7 @@ export default function UsersView() {
               </tbody>
             </table>
           </div>
-          <div className="w-96 card bg-primary shadow-xl p-0 h-min flex-col space-y-4">
+          <div className="w-96 card bg-primary shadow-xl p-0 h-min flex-col space-y-4 hidden">
             <div className="flex justify-center w-full my-4">
               <div className="avatar">
                 <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
