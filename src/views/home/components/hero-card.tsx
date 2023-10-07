@@ -2,12 +2,33 @@ import CardComponent from "@components/card-component";
 
 import LogoImage from "@assets/images/logo.png";
 import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import PlayaIcon from "@assets/icons/playa.png";
+import MountainIcon from "@assets/icons/mountain.png";
+import ForestIcon from "@assets/icons/forest.png";
 
 export default function HeroCard() {
+  const icons = [PlayaIcon, MountainIcon, ForestIcon];
+  const buildCardFooter = () => {
+    return (
+      <div className="w-full flex justify-between">
+        {icons.map((icon, index) => (
+          <div
+            key={index}
+            className="flex space-x-2 p-2 bg-glass rounded-3xl shadow"
+          >
+            <Image src={icon} alt="icon" width={50} height={50} />
+          </div>
+        ))}
+        <div
+            className="flex items-center space-x-2 p-2 bg-glass rounded-3xl shadow"
+        >
+            <span className="font-bold text-lg">Y más...</span>
+          </div>
+      </div>
+    );
+  };
   return (
-    <CardComponent className="bg-glass w-full">
+    <CardComponent className="bg-white bg-opacity-70 w-full  md:w-7/12 shadow-lg">
       <div className="w-full flex flex-col items-center lg:flex-row">
         <Image src={LogoImage} alt="Logo" width={150} height={150} />
         <div className="w-full text-center">
@@ -19,31 +40,7 @@ export default function HeroCard() {
           </h6>
         </div>
       </div>
-      {/* <div className="w-full flex flex-col items-center space-y-2">
-        <div className="flex flex-col items-center md:flex-row md:justify-start space-x-2 md:w-full">
-          <Image src={LogoImage} alt="Logo" width={200} height={200} />
-          <div className="flex flex-col">
-            <h1 className="text-4xl text-center text-gray-900 font-bold">
-              Descubre Tu Próxima Aventura
-            </h1>
-            <h6 className="text-center text-gray-900 font-bold">
-              Explora Destinos Inolvidables a Tu Alcance
-            </h6>
-          </div>
-        </div>
-        <p className="text-center text-gray-900">
-          Bienvenido a nuestra aplicación turística, tu compañero de viaje
-          perfecto para descubrir destinos emocionantes y experiencias únicas
-          cerca de ti o según tus preferencias.
-          <span className="font-bold">¿Listo para explorar?</span>
-        </p>
-        <div className="w-full text-end">
-          <span className="text-gray-900 cursor-pointer font-bold hover:underline flex justify-end items-center space-x-2">
-            Explorar destinos{" "}
-            <FontAwesomeIcon icon={faChevronRight} height={14} />
-          </span>
-        </div>
-      </div> */}
+      {buildCardFooter()}
     </CardComponent>
   );
 }

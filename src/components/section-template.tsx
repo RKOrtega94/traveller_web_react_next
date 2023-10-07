@@ -9,7 +9,7 @@ export default function SectionTemplate({
   children: React.ReactNode;
 }) {
   return (
-    <div className="w-full flex flex-col">
+    <div className="w-full flex flex-col p-10">
       <div className="w-full flex justify-between flex-row space-x-2 items-center">
         <span className="text-2xl font-bold">{section}</span>
         <div className="flex items-center space-x-2 text-xs">
