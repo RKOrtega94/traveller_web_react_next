@@ -6,10 +6,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 export default function HeroCard() {
-  
   return (
     <CardComponent className="bg-glass w-full">
-      <div className="w-full flex flex-col items-center space-y-2">
+      <div className="w-full flex flex-col items-center lg:flex-row">
+        <Image src={LogoImage} alt="Logo" width={150} height={150} />
+        <div className="w-full text-center">
+          <h1 className="text-2xl text-gray-900 font-bold">
+            Descubre Tu Próxima Aventura
+          </h1>
+          <h6 className="font-bold">
+            Explora Destinos Inolvidables a Tu Alcance
+          </h6>
+        </div>
+      </div>
+      {/* <div className="w-full flex flex-col items-center space-y-2">
         <div className="flex flex-col items-center md:flex-row md:justify-start space-x-2 md:w-full">
           <Image src={LogoImage} alt="Logo" width={200} height={200} />
           <div className="flex flex-col">
@@ -33,7 +43,7 @@ export default function HeroCard() {
             <FontAwesomeIcon icon={faChevronRight} height={14} />
           </span>
         </div>
-      </div>
+      </div> */}
     </CardComponent>
   );
 }

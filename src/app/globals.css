@@ -40,5 +40,5 @@ body {
       rgba(var(--background-end-rgb), 0.5)
     )
     rgb(var(--background-start-rgb));
-    opacity: 0.7;
+  opacity: 0.7;
 }
