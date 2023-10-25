@@ -43,3 +43,9 @@ body {
     height: 80vh;
   }
 }
+
+/* Hide the scrollbar arrows */
+/* Hide scrollbar arrows */
+::-webkit-scrollbar-button {
+    display: none;
+}

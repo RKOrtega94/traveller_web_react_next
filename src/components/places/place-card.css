@@ -1,0 +1,15 @@
+/* .place-card on small devices set width screen - 2.5rem */
+@media (max-width: 767px) {
+  .place-card {
+    width: calc(100vw - 2.5rem);
+    background-color: red;
+  }
+}
+
+/* .place-card on tablet or hight devices */
+@media (min-width: 768px) {
+  .place-card {
+    width: calc(50vw - 2.5rem) !important;
+    background-color: blue;
+  }
+}
