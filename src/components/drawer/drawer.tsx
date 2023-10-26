@@ -7,8 +7,8 @@ import DrawerButton from "./drawer-button";
 
 export default function AppDrawer() {
   return (
-    <div className="z-50 w-52 h-screen fixed flex space-x-2">
-      <div className="bg-white h-full w-full rounded-r-lg shadow-md p-4 space-y-2">
+    <div className="z-50 w-3/12 h-screen fixed flex space-x-2">
+      <div className="bg-white h-full w-full rounded-r-lg shadow-md p-4 space-y-2 flex flex-col">
         <div className="w-full flex justify-center">
           <Image src={LogoImage} alt="logo" width={100} height={100} />
         </div>
