@@ -7,7 +7,6 @@ export default function ActivityListActions() {
       <div className="w-full sm:max-w-sm">
         <InputTextField
           props={{
-            label: "Search",
             placeholder: "Search",
             name: "search",
           }}
