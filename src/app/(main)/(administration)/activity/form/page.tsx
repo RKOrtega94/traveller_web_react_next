@@ -1,4 +1,4 @@
-import ActivityForm from "@views/activity/form/activity-form";
+import ActivityForm from "@views/activity/form";
 
 export default function Page() {
   return (
