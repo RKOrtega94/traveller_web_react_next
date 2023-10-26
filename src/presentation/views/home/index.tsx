@@ -1,4 +1,4 @@
-import HeroComponent from "@/components/header/hero-component";
+import HeroComponent from "@components/header/hero-component";
 
 export default function HomeView() {
   return (

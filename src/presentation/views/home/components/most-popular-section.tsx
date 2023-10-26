@@ -1,4 +1,4 @@
-import PaceCard from "@/components/places/place-card";
+import PaceCard from "@components/places/place-card";
 import SectionTemplate from "@components/section-template";
 
 export default function MostPopularSection() {
@@ -11,9 +11,7 @@ export default function MostPopularSection() {
   };
   return (
     <SectionTemplate section="Populares">
-      <div className="flex overflow-x-auto">
-        {buildPlaces()}
-      </div>
+      <div className="flex overflow-x-auto">{buildPlaces()}</div>
     </SectionTemplate>
   );
 }

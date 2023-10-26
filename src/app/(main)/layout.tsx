@@ -1,5 +1,5 @@
 import NavbarComponent from "@components/navbar-component";
-import SidebarComponent from "@/components/sidebar/sidebar-component";
+import SidebarComponent from "@components/sidebar/sidebar-component";
 import FooterComponent from "@components/footer-component";
 
 export const metadata = {

@@ -1,8 +1,7 @@
+import AppBar from "@components/appbar/app-bar";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import AppBar from "@/components/appbar/app-bar";
-import AppDrawer from "@/components/drawer/drawer";
 
 const inter = Inter({ subsets: ["latin"] });
 
