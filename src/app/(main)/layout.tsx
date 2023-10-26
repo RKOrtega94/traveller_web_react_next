@@ -17,11 +17,9 @@ export default function layout({ children }: { children: React.ReactNode }) {
       <input id="main-drawer" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col items-start w-full h-full">
         {/* {children} */}
-        <NavbarComponent />
         {children}
         {/* <FooterComponent /> */}
       </div>
-      <SidebarComponent />
     </div>
   );
 }
