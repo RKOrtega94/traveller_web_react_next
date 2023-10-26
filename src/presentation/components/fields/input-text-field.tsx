@@ -6,7 +6,6 @@ interface InputTextFieldProps {
   label: string;
   name: string;
   placeholder?: string;
-  onChange: (e: any) => void;
 }
 
 export default function InputTextField({
@@ -14,6 +13,7 @@ export default function InputTextField({
 }: {
   props: InputTextFieldProps;
 }) {
+  const [value, setValue] = useState<string>();
   return (
     <div className="w-full">
       <label
@@ -29,7 +29,8 @@ export default function InputTextField({
           type="text"
           name={props.name}
           placeholder={props.placeholder}
-          onChange={(e) => props.onChange(e)}
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
         />
       </div>
     </div>
