@@ -1,10 +1,12 @@
-import { ActivityRepositoryImpl } from "@data/repositories";
+import { ActivityRepository } from "@domain/repositories";
 
-export default function GetAllActivitiesUseCase() {
-  const _repository = new ActivityRepositoryImpl();
-
+export default function GetAllActivitiesUseCase({
+  dataSource,
+}: {
+  dataSource: ActivityRepository;
+}) {
   const execute = async () => {
-    return await _repository.getActivities();
+    const activities = await dataSource.getActivities();
   };
 
   return {
