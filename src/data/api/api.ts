@@ -8,7 +8,18 @@ export default function Api() {
     return data;
   };
 
-  const post = async (path: string, body: any) => {};
+  const post = async (path: string, body: any) => {
+    const url = `${baseUrl}/${path}`;
+    const response = await fetch(url, {
+      method: "POST",
+      body: JSON.stringify(body),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await response.json();
+    return data;
+  };
 
   const put = async (path: string, id: any, body: any) => {};
 

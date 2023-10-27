@@ -2,37 +2,47 @@
 
 import { useState } from "react";
 
-interface InputTextFieldProps {
+export default function InputTextField({
+  label,
+  name,
+  placeholder,
+  value,
+  onChange,
+  type,
+}: {
   label?: string;
   name: string;
   placeholder?: string;
-}
-
-export default function InputTextField({
-  props,
-}: {
-  props: InputTextFieldProps;
+  value?: string;
+  onChange?: (e: any) => void;
+  type?: string;
 }) {
-  const [value, setValue] = useState<string>();
+  const [val, setVal] = useState<string>(value || "");
+
+  const handleChange = (e: any) => {
+    setVal(e.target.value);
+    onChange && onChange(e);
+  };
+
   return (
     <div className="w-full">
-      {props.label && (
+      {label && (
         <label
           className="py-2 transition-all pointer-events-none text-gray-500"
           htmlFor="input-field"
         >
-          {props.label}
+          {label}
         </label>
       )}
       <div className="w-full rounded dark:border-white border border-gray-200">
         <input
           id="input-field"
           className="w-full p-2 bg-transparent focus:outline-none"
-          type="text"
-          name={props.name}
-          placeholder={props.placeholder}
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
+          type={type || "text"}
+          name={name}
+          placeholder={placeholder}
+          value={val}
+          onChange={handleChange}
         />
       </div>
     </div>

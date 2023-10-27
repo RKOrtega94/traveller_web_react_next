@@ -1,13 +1,14 @@
 "use client";
 
 import { ActivityRepositoryImpl } from "@/data/repositories";
-import { GetAll } from "@/data/use_cases/activity";
+import { GetAll, Create } from "@/data/use_cases/activity";
 import { Activity } from "@/domain/entities";
 import { createContext, useContext, useState } from "react";
 
 const ActivityContext = createContext({
   activities: [] as Activity[],
   loadActivities: () => {},
+  createActivity: (data: Activity) => {},
 });
 
 export function useActivity() {
@@ -25,11 +26,20 @@ export const ActivityProvider = ({ children }: React.PropsWithChildren<{}>) => {
     setActivities(activities);
   };
 
+  const createActivity = async (data: Activity) => {
+    const activity = await Create({
+      repository: new ActivityRepositoryImpl(),
+    }).execute(data);
+
+    setActivities([...activities, activity]);
+  };
+
   return (
     <ActivityContext.Provider
       value={{
         activities,
         loadActivities,
+        createActivity,
       }}
     >
       {children}
