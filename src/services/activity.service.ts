@@ -1,8 +1,6 @@
 import axios from "axios";
 
 export default function ActivityService() {
-  axios.defaults.baseURL = "http://localhost:3001/activities";
-
   const getAll = async () => {
     let res;
     let err;

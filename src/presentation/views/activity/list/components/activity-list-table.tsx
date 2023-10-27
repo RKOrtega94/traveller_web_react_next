@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function ActivityListTable() {
   return (
-    <div className="overflow-x-auto h-full">
+    <section className="overflow-x-auto h-max">
       <table className="table">
         <thead>
           <tr>
@@ -44,31 +44,10 @@ export default function ActivityListTable() {
             <td>
               <span className="bg-green-300 px-2 rounded-md">Activo</span>
             </td>
-            <th>
-              <div className="dropdown dropdown-end relative">
-                <label tabIndex={0} className="btn btn-xs m-1">
-                  <Image
-                    src={VerticalDotsIcon}
-                    alt="Vertical Dots Icon"
-                    height={20}
-                  />
-                </label>
-                <ul
-                  tabIndex={0}
-                  className="absolute top-full dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
-                >
-                  <li>
-                    <a>Item 1</a>
-                  </li>
-                  <li>
-                    <a>Item 2</a>
-                  </li>
-                </ul>
-              </div>
-            </th>
+            <th>Opciones</th>
           </tr>
         </tbody>
       </table>
-    </div>
+    </section>
   );
 }

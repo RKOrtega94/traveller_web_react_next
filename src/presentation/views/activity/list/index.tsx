@@ -4,16 +4,16 @@ import ActivityListDetail from "./components/activity-list-detail";
 
 export default function ActivityList() {
   return (
-    <div className="p-4 md:px-10 w-full space-y-2">
+    <main className="p-4 md:px-10 w-full">
       <ActivityListActions />
-      <div className="flex justify-start w-full space-x-0 md:space-x-2">
-        <div className="w-full md:w-2/3">
+      <section className="w-full flex space-x-2">
+        <div className="w-full md:w-2/3 h-fit">
           <ActivityListTable />
         </div>
-        <div className="hidden md:block md:w-1/3">
+        <div className="hidden md:flex md:w-1/3">
           <ActivityListDetail />
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
