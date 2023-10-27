@@ -19,6 +19,10 @@ export default function ActivityFormComponent() {
     setActivity(activity);
   };
 
+  const addImages = (images: any) => {
+    console.log(images);
+  };
+
   const handleSubmit = (e: any) => {
     e.preventDefault();
     createActivity(activity).then(() => {
@@ -44,12 +48,7 @@ export default function ActivityFormComponent() {
         onChange={handleChange}
         placeholder="Descripción de la actividad"
       />
-      <ImagesPicker
-        onChange={(images) => {
-          activity.images = images;
-          setActivity(activity);
-        }}
-      />
+      <ImagesPicker onChange={(images) => addImages} />
       <Button className="w-full">Guardar</Button>
     </form>
   );
