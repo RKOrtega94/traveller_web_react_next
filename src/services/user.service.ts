@@ -1,9 +1,6 @@
 import axios, { Axios, AxiosError } from "axios";
 
 export default function UserService() {
-  // Configure axios for this service
-  axios.defaults.baseURL = "http://localhost:3000/api/users"; // Set default URL for all requests to this service to the API URL
-
   /**
    * Get all users
    *

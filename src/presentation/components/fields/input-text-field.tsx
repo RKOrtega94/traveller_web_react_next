@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 interface InputTextFieldProps {
-  label: string;
+  label?: string;
   name: string;
   placeholder?: string;
 }
