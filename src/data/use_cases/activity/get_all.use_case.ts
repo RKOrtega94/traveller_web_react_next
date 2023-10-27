@@ -1,13 +1,11 @@
 import { ActivityRepository } from "@domain/repositories";
 
 export default function GetAllActivitiesUseCase({
-  dataSource,
+  repository,
 }: {
-  dataSource: ActivityRepository;
+  repository: ActivityRepository;
 }) {
-  const execute = async () => {
-    const activities = await dataSource.getActivities();
-  };
+  const execute = async () => await repository.getActivities();
 
   return {
     execute,

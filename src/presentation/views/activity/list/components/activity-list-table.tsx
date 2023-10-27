@@ -1,7 +1,18 @@
+"use client";
+
+import { useActivity } from "@/presentation/providers/activity_provider";
 import VerticalDotsIcon from "@assets/icons/vertical-dots.svg";
 import Image from "next/image";
+import { useEffect } from "react";
 
 export default function ActivityListTable() {
+  const { activities, loadActivities } = useActivity();
+
+  useEffect(() => {
+    loadActivities();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <section className="overflow-x-auto h-max">
       <table className="table">
@@ -19,33 +30,42 @@ export default function ActivityListTable() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th>
-              <label>
-                <input type="checkbox" className="checkbox" />
-              </label>
-            </th>
-            <td>
-              <div className="flex items-center space-x-3">
-                <div className="avatar">
-                  <div className="mask mask-squircle w-12 h-12">
-                    <Image
-                      src="https://i.pravatar.cc/500?img=32"
-                      alt="Avatar"
-                      width={48}
-                      height={48}
-                    />
-                  </div>
+          {activities.map((activity) => (
+            <tr key={activity.id}>
+              <th>
+                <label>
+                  <input type="checkbox" className="checkbox" />
+                </label>
+              </th>
+              <td>
+                <div className="flex items-center space-x-3">
+                  {activity.images[0] ? (
+                    <div className="avatar">
+                      <div className="mask mask-squircle w-12 h-12">
+                        <Image
+                          src={activity.images[0]}
+                          alt={activity.name}
+                          layout="fill"
+                        />
+                      </div>
+                    </div>
+                  ) : (
+                    ""
+                  )}
+                  <div className="font-bold">{activity.name}</div>
                 </div>
-                <div className="font-bold">Hart Hagerty</div>
-              </div>
-            </td>
-            <td>Zemlak, Daniel and Leannon</td>
-            <td>
-              <span className="bg-green-300 px-2 rounded-md">Activo</span>
-            </td>
-            <th>Opciones</th>
-          </tr>
+              </td>
+              <td className="max-w-xs">
+                <span className="line-clamp-2 overflow-ellipsis">
+                  {activity.description}
+                </span>
+              </td>
+              <td>
+                <span className="bg-green-300 px-2 rounded-md">Activo</span>
+              </td>
+              <th>Opciones</th>
+            </tr>
+          ))}
         </tbody>
       </table>
     </section>

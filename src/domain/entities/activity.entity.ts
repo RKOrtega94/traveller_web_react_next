@@ -2,6 +2,7 @@ export default class Activity {
   id: string;
   name: string;
   description: string;
+  images: string[];
   createdAt: Date;
   updatedAt: Date;
 
@@ -9,12 +10,14 @@ export default class Activity {
     id: string,
     name: string,
     description: string,
+    images: string[],
     createdAt: Date,
     updatedAt: Date
   ) {
     this.id = id;
     this.name = name;
     this.description = description;
+    this.images = images;
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
   }
@@ -25,6 +28,7 @@ export default class Activity {
       json.id,
       json.name,
       json.description,
+      json.images,
       json.createdAt,
       json.updatedAt
     );
@@ -36,6 +40,7 @@ export default class Activity {
       id: this.id,
       name: this.name,
       description: this.description,
+      images: this.images,
       createdAt: this.createdAt,
       updatedAt: this.updatedAt,
     };

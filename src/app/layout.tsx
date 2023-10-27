@@ -2,6 +2,7 @@ import AppBar from "@components/appbar/app-bar";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { ActivityProvider } from "@/presentation/providers/activity_provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,12 +17,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <AppBar />
-        {/* <AppDrawer /> */}
-        {children}
-      </body>
-    </html>
+    <ActivityProvider>
+      <html lang="en">
+        <body className={inter.className}>
+          <AppBar />
+          {/* <AppDrawer /> */}
+          {children}
+        </body>
+      </html>
+    </ActivityProvider>
   );
 }

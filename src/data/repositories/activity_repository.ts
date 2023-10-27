@@ -1,14 +1,18 @@
 import { ActivityRepository } from "@domain/repositories";
 import { Activity } from "@domain/entities";
-import Api from "./../api/api";
+import { ActivityDataSource } from "@data/data_sources";
 
 export default class ActivityRepositoryImpl extends ActivityRepository {
-  _api = new Api();
-
-  async getActivities(): Promise<Activity> {
+  async getActivities(): Promise<Activity[]> {
     try {
-      const response = await this._api.get("/activities");
-      return response;
+      const response = await ActivityDataSource().get();
+      if (response) {
+        const activities: Activity[] = response.map((activity: any) =>
+          Activity.fromJson(activity)
+        );
+        return activities;
+      }
+      return [];
     } catch (error) {
       throw error;
     }
