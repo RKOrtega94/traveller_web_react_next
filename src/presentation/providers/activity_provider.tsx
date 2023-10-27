@@ -8,7 +8,9 @@ import { createContext, useContext, useState } from "react";
 const ActivityContext = createContext({
   activities: [] as Activity[],
   loadActivities: () => {},
-  createActivity: (data: Activity) => {},
+  createActivity: (data: Activity): Promise<Activity> => {
+    return new Promise((resolve) => resolve({} as Activity));
+  },
 });
 
 export function useActivity() {
@@ -26,12 +28,14 @@ export const ActivityProvider = ({ children }: React.PropsWithChildren<{}>) => {
     setActivities(activities);
   };
 
-  const createActivity = async (data: Activity) => {
+  const createActivity = async (data: Activity): Promise<Activity> => {
     const activity = await Create({
       repository: new ActivityRepositoryImpl(),
     }).execute(data);
 
     setActivities([...activities, activity]);
+
+    return activity;
   };
 
   return (

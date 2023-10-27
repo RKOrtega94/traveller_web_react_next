@@ -5,7 +5,11 @@ import RemoveImageIcon from "@assets/icons/remove-image.svg";
 import Image from "next/image";
 import { useState } from "react";
 
-export default function ImagesPicker() {
+export default function ImagesPicker({
+  onChange,
+}: {
+  onChange: (images: any[]) => void;
+}) {
   const [images, setImages] = useState([]);
 
   const handleAddImage = () => {
@@ -25,7 +29,10 @@ export default function ImagesPicker() {
     // Click the input element to open the file selection dialog
     input.click();
 
-    console.log(images);
+    // Return images as base64 string
+    const reader = new FileReader();
+    const files = input.files as unknown as File[];
+    onChange(files);
   };
 
   const removeImage = (index: number) => {

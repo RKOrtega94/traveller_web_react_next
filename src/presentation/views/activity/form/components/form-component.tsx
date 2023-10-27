@@ -6,9 +6,13 @@ import Button from "@components/fields/button";
 import ImagesPicker from "@components/fields/images-picker";
 import { Activity } from "@domain/entities";
 import { useState } from "react";
+import { useActivity } from "@/presentation/providers/activity_provider";
+import { useRouter } from "next/navigation";
 
 export default function ActivityFormComponent() {
   const [activity, setActivity] = useState({} as Activity);
+  const { createActivity } = useActivity();
+  const router = useRouter();
 
   const handleChange = (e: any) => {
     activity[e.target.name] = e.target.value;
@@ -17,8 +21,9 @@ export default function ActivityFormComponent() {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-
-    console.log(activity);
+    createActivity(activity).then(() => {
+      router.back();
+    });
   };
 
   return (
@@ -33,8 +38,18 @@ export default function ActivityFormComponent() {
         value={activity.name}
         onChange={(e) => handleChange(e)}
       />
-      <InputTextareaField />
-      <ImagesPicker />
+      <InputTextareaField
+        name="description"
+        value={activity.description}
+        onChange={handleChange}
+        placeholder="Descripción de la actividad"
+      />
+      <ImagesPicker
+        onChange={(images) => {
+          activity.images = images;
+          setActivity(activity);
+        }}
+      />
       <Button className="w-full">Guardar</Button>
     </form>
   );
