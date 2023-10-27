@@ -22,7 +22,9 @@
       "@components/*": ["./src/presentation/components/*"],
       "@assets/*": ["./src/assets/*"],
       "@views/*": ["./src/presentation/views/*"],
-      "@entity/*": ["./src/domain/entities/*"]
+      "@entity/*": ["./src/domain/entities/*"],
+      "@domain/*": ["./src/domain/*"],
+      "@data/*": ["./src/data/*"]
     }
   },
   "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx"],

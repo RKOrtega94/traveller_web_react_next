@@ -24,7 +24,7 @@ export default function InputTextField({
           {props.label}
         </label>
       )}
-      <div className="w-full rounded dark:border-white border border-gray-700">
+      <div className="w-full rounded dark:border-white border border-gray-200">
         <input
           id="input-field"
           className="w-full p-2 bg-transparent focus:outline-none"

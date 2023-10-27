@@ -1,4 +1,3 @@
-
 import Card from "@components/cards/main-card";
 
 export default function ActivityListDetail() {

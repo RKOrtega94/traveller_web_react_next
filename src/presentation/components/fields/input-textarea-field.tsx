@@ -1,6 +1,6 @@
 export default function InputTextareaField() {
   return (
-    <div className="w-full rounded dark:border-white border border-gray-700">
+    <div className="w-full rounded dark:border-white border border-gray-200">
       <textarea
         className="w-full p-2 bg-transparent outline-none"
         placeholder="Escribir..."

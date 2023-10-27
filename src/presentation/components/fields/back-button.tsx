@@ -9,7 +9,7 @@ export default function BackButton() {
   const router = useRouter();
   return (
     <button
-      className="btn btn-ghost w-min fill-black"
+      className="btn btn-ghost flex justify-center items-center"
       onClick={() => router.back()}
     >
       <Image src={BackIcon} alt="Back" width={24} height={24} />
