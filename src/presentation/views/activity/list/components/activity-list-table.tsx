@@ -39,7 +39,7 @@ export default function ActivityListTable() {
               </th>
               <td>
                 <div className="flex items-center space-x-3">
-                  {activity.images[0] ? (
+                  {activity.images && activity.images[0] ? (
                     <div className="avatar">
                       <div className="mask mask-squircle w-12 h-12">
                         <Image

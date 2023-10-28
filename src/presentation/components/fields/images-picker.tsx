@@ -7,64 +7,64 @@ import { useState } from "react";
 
 export default function ImagesPicker({
   onChange,
+  images,
+  setImages,
 }: {
-  onChange: (images: any[]) => void;
+  onChange?: (e: any) => void;
+  images?: any[];
+  setImages?: (images: any[]) => void;
 }) {
-  const [images, setImages] = useState([]);
-
+  console.log(images);
   const handleAddImage = () => {
-    // Create a new input element of type file
-    const input = document.createElement("input");
-    input.type = "file";
-
-    // Listen for the change event on the input element
-    input.addEventListener("change", (e) => {
-      // Get the selected file
-      const file = URL.createObjectURL((e.target as HTMLInputElement).files[0]);
-
-      // Update the images state variable with the selected file
-      setImages([...images, file]);
-    });
-
-    // Click the input element to open the file selection dialog
-    input.click();
-
-    // Return images as base64 string
-    const reader = new FileReader();
-    const files = input.files as unknown as File[];
-    onChange(files);
+    const input = document.querySelector(
+      "input[type=file]"
+    ) as HTMLInputElement;
+    input?.click();
   };
 
   const removeImage = (index: number) => {
-    const newImages = [...images];
-
-    newImages.splice(index, 1);
-
-    setImages(newImages);
+    const newImages = images?.filter((image, i) => i !== index);
+    setImages && setImages(newImages);
   };
 
   return (
     <div className="w-full sm:h-32 flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 space-x-0">
+      <input
+        type="file"
+        className="hidden"
+        name="images"
+        multiple
+        accept="image/*"
+        onChange={(e) => {
+          onChange && onChange(e);
+        }}
+      />
       <button
+        className="aspect-square w-full sm:w-auto sm:h-full max-h-32 bg-gray-200 rounded-md relative flex justify-center items-center"
         type="button"
-        className="btn h-full bg-gray-200 w-32 rounded-md flex justify-center items-center border border-gray-400 border-dashed p-10"
         onClick={handleAddImage}
       >
-        <Image src={PlusIcon} alt="Agregar imagen" />
+        <Image
+          className="object-cover rounded-md"
+          src={PlusIcon}
+          alt="Agregar imagen"
+          width={50}
+        />
       </button>
       <div
         className="w-auto grid grid-cols-2 gap-2 sm:h-32 sm:flex overflow-hidden"
         draggable="true"
         onDragStart={(e) => e.preventDefault()}
       >
-        {images.map((image, index) => (
-          <ImagePickedContainer
-            key={index}
-            image={image}
-            index={index}
-            handleRemoveImage={() => removeImage(index)}
-          />
-        ))}
+        {images &&
+          images.map((image, index) => (
+            <ImagePickedContainer
+              key={index}
+              image={image}
+              index={index}
+              handleRemoveImage={() => removeImage(index)}
+            />
+          ))}
       </div>
     </div>
   );

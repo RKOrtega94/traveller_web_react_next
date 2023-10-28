@@ -11,16 +11,35 @@ import { useRouter } from "next/navigation";
 
 export default function ActivityFormComponent() {
   const [activity, setActivity] = useState({} as Activity);
+  const [previewUrls, setPreviewUrls] = useState([] as any[]);
   const { createActivity } = useActivity();
   const router = useRouter();
 
   const handleChange = (e: any) => {
-    activity[e.target.name] = e.target.value;
-    setActivity(activity);
-  };
+    if (e.target.type === "file") {
+      const files = e.target.files;
+      const newImages = [];
 
-  const addImages = (images: any) => {
-    console.log(images);
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        const reader = new FileReader();
+
+        reader.onload = () => {
+          newImages.push(reader.result);
+          if (newImages.length === files.length) {
+            activity[e.target.name] = [...previewUrls, ...newImages];
+            setActivity(activity);
+            setPreviewUrls([...previewUrls, ...newImages]);
+          }
+        };
+
+        reader.readAsDataURL(file);
+      }
+    } else {
+      activity[e.target.name] = e.target.value;
+    }
+    setActivity(activity);
+    console.log(activity);
   };
 
   const handleSubmit = (e: any) => {
@@ -48,7 +67,11 @@ export default function ActivityFormComponent() {
         onChange={handleChange}
         placeholder="Descripción de la actividad"
       />
-      <ImagesPicker onChange={(images) => addImages} />
+      <ImagesPicker
+        onChange={handleChange}
+        images={previewUrls}
+        setImages={setPreviewUrls}
+      />
       <Button className="w-full">Guardar</Button>
     </form>
   );
