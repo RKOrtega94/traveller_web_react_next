@@ -19,9 +19,7 @@ export default function ActivityListTable() {
         <thead>
           <tr>
             <th>
-              <label>
-                <input type="checkbox" className="checkbox" />
-              </label>
+              <input type="checkbox" className="checkbox" />
             </th>
             <th>Actividad</th>
             <th>Descripción</th>
@@ -33,9 +31,7 @@ export default function ActivityListTable() {
           {activities.map((activity) => (
             <tr key={activity.id}>
               <th>
-                <label>
-                  <input type="checkbox" className="checkbox" />
-                </label>
+                <input type="checkbox" className="checkbox" />
               </th>
               <td>
                 <div className="flex items-center space-x-3">

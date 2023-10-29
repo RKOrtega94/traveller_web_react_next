@@ -8,7 +8,7 @@ export default function CategoryListActions() {
   const router = useRouter();
 
   const handleNavigate = () => {
-    router.push("/activity/form");
+    router.push("/category/form");
   };
 
   return (

@@ -1,9 +1,9 @@
-import CategoryView from "@views/category/index";
+import CategoryList from "@views/category/list";
 
 export default function page() {
   return (
     <div className="w-full p-4">
-      <CategoryView />
+      <CategoryList />
     </div>
   );
 }
