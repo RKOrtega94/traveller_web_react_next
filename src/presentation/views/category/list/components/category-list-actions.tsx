@@ -1,10 +1,10 @@
 "use client";
 
-import Button from "@components/fields/button";
 import InputTextField from "@components/fields/input-text-field";
+import Button from "@components/fields/button";
 import { useRouter } from "next/navigation";
 
-export default function ActivityListActions() {
+export default function CategoryListActions() {
   const router = useRouter();
 
   const handleNavigate = () => {
