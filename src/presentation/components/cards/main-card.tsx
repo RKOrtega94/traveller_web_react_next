@@ -1,7 +1,7 @@
 export default function Card({ children }: { children: React.ReactNode }) {
   return (
-    <div className="card card-compact w-full bg-base-100 shadow-xl h-min">
-      <div className="card-body">{children}</div>
+    <div className="cursor-pointer rounded-lg bg-white shadow-md shadow-black border border-black border-b-2 border-r-2 hover:border-b-4 hover:border-r-4">
+      {children}
     </div>
   );
 }
