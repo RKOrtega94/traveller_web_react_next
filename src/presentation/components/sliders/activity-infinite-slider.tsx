@@ -18,5 +18,7 @@ export default async function ActivityInfinityScroll() {
 
   const [activities] = await Promise.all([activitiesData]);
 
+  console.log(activities);
+
   return <div>Infinite scroll</div>;
 }
