@@ -14,7 +14,7 @@ export default async function CategoriesSlider() {
   return (
     <div className="flex justify-start space-x-8">
       {items.map((item, index) => (
-        <CategoryCard name="item.name" key={index} />
+        <CategoryCard category={item} key={index} />
       ))}
     </div>
   );
