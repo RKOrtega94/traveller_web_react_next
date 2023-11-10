@@ -15,7 +15,7 @@ export default function HeroCategoriesSection() {
 
   useEffect(() => {
     getCategories.execute().then((data) => setCategories(data));
-    console.log(categories);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const options = {
