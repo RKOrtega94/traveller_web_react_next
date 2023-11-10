@@ -1,0 +1,32 @@
+.carousel-container {
+  overflow: hidden;
+  position: relative;
+  bottom: 0;
+  z-index: 40;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  position: absolute;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  gap: 16px;
+  height: 100%;
+  animation: slide 5s linear infinite;
+}
+
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
