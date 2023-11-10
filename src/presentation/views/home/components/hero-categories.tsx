@@ -18,6 +18,19 @@ export default function HeroCategoriesSection() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const next = document.querySelector(
+        ".splide__pagination__page--next"
+      ) as HTMLElement;
+      next?.click();
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [categories]);
+
   const options = {
     type: "loop",
     gap: "1rem",
