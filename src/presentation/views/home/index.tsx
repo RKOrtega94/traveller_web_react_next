@@ -1,5 +1,4 @@
 import HeroComponent from "@views/home/components/hero-component";
-import "./home.css";
 
 export default function HomeView() {
   return (

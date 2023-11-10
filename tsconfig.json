@@ -24,7 +24,8 @@
       "@views/*": ["./src/presentation/views/*"],
       "@entity/*": ["./src/domain/entities/*"],
       "@domain/*": ["./src/domain/*"],
-      "@data/*": ["./src/data/*"]
+      "@data/*": ["./src/data/*"],
+      "@providers/*": ["./src/presentation/providers/*"]
     }
   },
   "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx"],

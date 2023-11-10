@@ -2,9 +2,10 @@ import AppBar from "@components/appbar/app-bar";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { ActivityProvider } from "@/presentation/providers/activity_provider";
 
 const inter = Inter({ subsets: ["latin"] });
+
+import Provider from "@providers/index";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,14 +18,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ActivityProvider>
-      <html lang="en">
-        <body className={inter.className}>
+    <html lang="en">
+      <body className={inter.className}>
+        <Provider>
           <AppBar />
           {/* <AppDrawer /> */}
           {children}
-        </body>
-      </html>
-    </ActivityProvider>
+        </Provider>
+      </body>
+    </html>
   );
 }

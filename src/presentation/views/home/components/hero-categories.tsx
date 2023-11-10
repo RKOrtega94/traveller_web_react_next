@@ -1,8 +1,8 @@
-export default function HeroCategoriesSection({
-  items,
-}: {
-  items: Category[];
-}) {
+"use client";
+
+import { Category } from "@/domain/entities";
+
+export default function HeroCategoriesSection() {
   const options = {
     type: "loop",
     gap: "1rem",
@@ -15,7 +15,7 @@ export default function HeroCategoriesSection({
   };
   return (
     <div className="absolute bottom-0 left-0 w-full bg-black">
-      <div className="carousel-track">vontenido</div>
+      <div className="carousel-track">Contenido</div>
     </div>
   );
 }
