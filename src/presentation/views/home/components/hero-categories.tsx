@@ -31,9 +31,11 @@ export default function HeroCategoriesSection() {
     padding: "0.5rem",
   };
   return (
-    <Splide aria-label="My Favorite Images" options={options}>
-      {/* <SplideSlide>content 1</SplideSlide>
-      <SplideSlide>content 2</SplideSlide> */}
+    <Splide
+      aria-label="My Favorite Images"
+      options={options}
+      className="absolute bottom-full z-10 w-full"
+    >
       {categories.map((category) => (
         <SplideSlide key={category.id}>
           <CategoryCard category={category} />
