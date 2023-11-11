@@ -9,15 +9,17 @@ export default function SectionTemplate({
   children: React.ReactNode;
 }) {
   return (
-    <div className="w-full flex flex-col p-10">
-      <div className="w-full flex justify-between flex-row space-x-2 items-center">
-        <span className="text-2xl font-bold">{section}</span>
-        <div className="flex items-center space-x-2 text-xs">
-          <span>Ver más</span>
-          <FontAwesomeIcon icon={faAngleRight} height={12} />
+    <div className="w-full flex justify-center">
+      <div className="w-full max-w-7xl flex flex-col mx-10">
+        <div className="w-full flex justify-between flex-row space-x-2 items-center">
+          <span className="text-2xl font-bold">{section}</span>
+          <div className="flex items-center space-x-2 text-xs">
+            <span>Ver más</span>
+            <FontAwesomeIcon icon={faAngleRight} height={12} />
+          </div>
         </div>
+        <div>{children}</div>
       </div>
-      <div>{children}</div>
     </div>
   );
 }

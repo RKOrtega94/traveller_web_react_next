@@ -22,7 +22,7 @@ export default function HeroCategoriesSection() {
     type: "loop",
     gap: "1rem",
     autoplay: true,
-    interval: 3000,
+    interval: 5000,
     pauseOnHover: true,
     resetProgress: false,
     arrows: false,
